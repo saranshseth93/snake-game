@@ -196,107 +196,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     animatecontrol();
   }
-  handletouch("root");
-  setupSwipeControls();
-  function handletouch(element) {
-    let touch = document.getElementById(element); // our app
-    let startx, starty, mytime; // starter variables
-    touch.addEventListener(
-      "touchstart",
-      function (event) {
-        let mytouch = event.changedTouches[0];
-        startx = mytouch.pageX;
-        starty = mytouch.pageY;
-        mytime = new Date().getTime();
-        event.preventDefault();
-      },
-      false
-    ); // on start of touch we get all starter variables
-    touch.addEventListener(
-      "touchmove",
-      function (event) {
-        event.preventDefault();
-      },
-      false
-    ); // stop scrollin m8
-    touch.addEventListener(
-      "touchend",
-      function (event) {
-        let mytouch = event.changedTouches[0];
-        let distx = mytouch.pageX - startx;
-        let disty = mytouch.pageY - starty;
-        let touchtime = new Date().getTime() - mytime;
-        if (touchtime <= 300) {
-          if (
-            Math.abs(distx) >= 150 * scale &&
-            Math.abs(disty) <= 100 * scale
-          ) {
-            if (distx > 0) {
-              if (direction != 3) {
-                direction = 1;
-                icon = '<i class="fas fa-arrow-circle-right"></i>';
-              }
-            } else {
-              if (direction != 1) {
-                direction = 3;
-                icon = '<i class="fas fa-arrow-circle-left"></i>';
-              }
-            }
-            animatecontrol();
-          } else if (
-            Math.abs(disty) >= 150 * scale &&
-            Math.abs(distx) <= 100 * scale
-          ) {
-            if (disty > 0) {
-              if (direction != 4) {
-                direction = 2;
-                icon = '<i class="fas fa-arrow-circle-down"></i>';
-              }
-            } else {
-              if (direction != 2) {
-                direction = 4;
-                icon = '<i class="fas fa-arrow-circle-up"></i>';
-              }
-            }
-            animatecontrol();
-          }
-        }
-        event.preventDefault();
-      },
-      false
-    ); // on end of touch we get the other variables and identify the direction of it
-  } // Swipe works not perfectly but works, I need to get better idea to handle mobile
+  setupTouchControls();
 
-  function setupSwipeControls() {
-    let touchStartX = 0;
-    let touchStartY = 0;
+  function setupTouchControls() {
+    let startx, starty;
 
     document.addEventListener(
       "touchstart",
-      (e) => {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
+      function (e) {
+        startx = e.touches[0].clientX;
+        starty = e.touches[0].clientY;
+        e.preventDefault();
       },
       false
     );
 
     document.addEventListener(
       "touchend",
-      (e) => {
-        const touchEndX = e.changedTouches[0].clientX;
-        const touchEndY = e.changedTouches[0].clientY;
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
+      function (e) {
+        const endx = e.changedTouches[0].clientX;
+        const endy = e.changedTouches[0].clientY;
 
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-          // Horizontal swipe
-          if (deltaX > 0) changeDirection("right");
-          else changeDirection("left");
+        const dx = endx - startx;
+        const dy = endy - starty;
+
+        if (Math.abs(dx) > Math.abs(dy)) {
+          if (dx > 0) {
+            changeDirection("right");
+          } else {
+            changeDirection("left");
+          }
         } else {
-          // Vertical swipe
-          if (deltaY > 0) changeDirection("down");
-          else changeDirection("up");
+          if (dy > 0) {
+            changeDirection("down");
+          } else {
+            changeDirection("up");
+          }
         }
+        e.preventDefault();
       },
       false
     );
