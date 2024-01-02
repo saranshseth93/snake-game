@@ -258,7 +258,10 @@ input {
     text-wrap: pretty;
   }
   .error-mobile {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     color: white;
     position: absolute;
     top: 50%;
@@ -266,14 +269,20 @@ input {
     transform: translate(-50%, -50%);
     transition: 1s;
     letter-spacing: 0;
-    font-size: 1.7rem;
+    font-size: 4rem;
     z-index: 9999;
-    width: 100%;
+    width: 90%;
     height: 100vh;
+    line-height: 6rem;
+    padding: 0 40px;
+    text-wrap: pretty;
     background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px red, 0 0 20px red,
       0 0 25px red, 0 0 30px red, 0 0 35px red;
+  }
+  .float {
+    width: 120%;
   }
   #root {
     display: none !important;
