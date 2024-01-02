@@ -285,9 +285,8 @@ input {
     font-size: 1.7rem;
     z-index: 9999;
     width: 90%;
-    height: 84vh;
+    /* height: 84vh; */
     line-height: 3rem;
-    padding: 0 40px;
     text-wrap: pretty;
     background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none;
