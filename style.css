@@ -287,7 +287,9 @@ input {
     width: 90%;
     /* height: 84vh; */
     line-height: 3rem;
-    text-wrap: pretty;
+    text-wrap: balance;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none;
   }
