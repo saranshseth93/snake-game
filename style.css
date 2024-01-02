@@ -249,7 +249,7 @@ input {
 }
 
 /* Media query for mobile devices */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   #app:after {
     font-size: 5rem;
     top: -40%;
