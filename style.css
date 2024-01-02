@@ -275,24 +275,28 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: bisque;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 1s;
-    letter-spacing: 0;
-    font-size: 1.7rem;
     z-index: 9999;
     width: 90%;
     max-width: 90vw;
     /* height: 84vh; */
     line-height: 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+  }
+  .error-mobile span {
+    letter-spacing: 0;
+    font-size: 1.7rem;
     text-wrap: balance;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    background-color: rgba(0, 0, 0, 0.7);
-    pointer-events: none;
+    color: bisque;
+    max-width: 100%;
+    white-space: normal;
   }
   .float {
     width: 120%;
