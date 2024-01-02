@@ -248,6 +248,19 @@ input {
   display: none;
 }
 
+#credits {
+  color: lavender;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Press Start 2";
+}
+
+#credits a {
+  color: lightsalmon;
+  text-decoration: none;
+}
+
 /* Media query for mobile devices */
 @media screen and (max-width: 767px) {
   #app:after {
@@ -262,24 +275,22 @@ input {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white;
+    color: bisque;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 1s;
     letter-spacing: 0;
-    font-size: 4rem;
+    font-size: 1.7rem;
     z-index: 9999;
     width: 90%;
-    height: 100vh;
-    line-height: 6rem;
+    height: 84vh;
+    line-height: 3rem;
     padding: 0 40px;
     text-wrap: pretty;
     background-color: rgba(0, 0, 0, 0.7);
     pointer-events: none;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px red, 0 0 20px red,
-      0 0 25px red, 0 0 30px red, 0 0 35px red;
   }
   .float {
     width: 120%;
