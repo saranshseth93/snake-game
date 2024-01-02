@@ -45,7 +45,7 @@ body {
   transition: 0.05s;
 }
 #app:after {
-  content: "SNAKE GAME";
+  content: "NAAGIN GAME";
   position: absolute;
   left: 50%;
   top: -15%;
