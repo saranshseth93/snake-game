@@ -285,6 +285,7 @@ input {
     font-size: 1.7rem;
     z-index: 9999;
     width: 90%;
+    max-width: 90vw;
     /* height: 84vh; */
     line-height: 3rem;
     text-wrap: balance;
