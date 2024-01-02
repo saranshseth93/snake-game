@@ -1,10 +1,16 @@
 @font-face {
   font-family: "Press Start";
-  src: url("/assets/PrStart.ttf") format("truetype");
+  src: url("/assets/PrStart.ttf") format("truetype"),
+    url("/assets/PrStart.woff") format("woff"),
+    url("/assets/PrStart.woff2") format("woff2"),
+    url("/assets/PrStart.eot") format("embedded-opentype");
 }
 @font-face {
   font-family: "Press Start 2";
-  src: url("/assets/prstartk.ttf") format("truetype");
+  src: url("/assets/prstartk.ttf") format("truetype"),
+    url("/assets/prstartk.woff") format("woff"),
+    url("/assets/prstartk.woff2") format("woff2"),
+    url("/assets/prstartk.eot") format("embedded-opentype");
 }
 html {
   height: 100%;

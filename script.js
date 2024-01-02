@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
     touch.addEventListener(
       "touchmove",
       function (event) {
-        event.preventDefalut();
+        event.preventDefault();
       },
       false
     ); // stop scrollin m8
